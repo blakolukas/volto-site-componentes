@@ -16,6 +16,11 @@ msgstr ""
 msgid "Cabeçalho"
 msgstr ""
 
+#. Default: "Cinza"
+#: components/Blocks/ImagemTexto/schema
+msgid "Cinza"
+msgstr ""
+
 #. Default: "Cor de fundo"
 #: components/Blocks/ImagemTexto/schema
 msgid "Cor de fundo"
@@ -99,4 +104,9 @@ msgstr ""
 #. Default: "Remove tooltip"
 #: editor/plugins/ToolTipPlugin/index
 msgid "Remove tooltip"
+msgstr ""
+
+#. Default: "Transparente"
+#: components/Blocks/ImagemTexto/schema
+msgid "Transparente"
 msgstr ""
