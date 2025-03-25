@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import PreviewLink from '../../PreviewLink/PreviewLink';
 import { createPortal } from 'react-dom';
 
 const GridServicos = ({ items = [] }) => {
@@ -40,7 +39,6 @@ const GridServicos = ({ items = [] }) => {
             <div className="nav-grid-item" key={item['@id']}>
               <div className="nav-content">
                 <h3>{item.title}</h3>
-                <p>{item.head_title}</p>
               </div>
             </div>
           </a>
