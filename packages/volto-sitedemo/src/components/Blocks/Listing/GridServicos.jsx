@@ -2,6 +2,7 @@ import React from 'react';
 import PreviewLink from '../../PreviewLink/PreviewLink';
 
 const GridServicos = ({ items = [] }) => {
+  console.log('items', items);
   return (
     <div className="servicos-grid">
       <div className="servicos-grid-link">

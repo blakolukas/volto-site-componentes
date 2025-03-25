@@ -87,6 +87,14 @@ const applyConfig = (config) => {
       id: 'grid-servicos',
       title: 'Grid Servicos',
       template: GridServicos,
+      schemaEnhancer: ({ schema, FormData, intl }) => {
+        console.log('schema', schema);
+        console.log('properties', schema.properties);
+
+        schema.properties.linkHref.selectedItemAttrs.push('Subtitle');
+
+        return schema;
+      },
     },
   ];
 
