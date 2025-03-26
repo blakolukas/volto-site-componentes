@@ -20,7 +20,7 @@ const GridServicos = ({ items = [] }) => {
             <div className="servicos-grid-item" key={item['@id']}>
               <div className="servicos-content">
                 <h3>{item.title}</h3>
-                <p>{item.head_title}</p>
+                <p>{item.subtitle}</p>
               </div>
               <div className="servicos-image">
                 <PreviewLink

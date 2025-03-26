@@ -16,3 +16,4 @@ yarn.lock
 packages/.DS_Store
 .env
 .idea/
+pnpm-lock.yaml
