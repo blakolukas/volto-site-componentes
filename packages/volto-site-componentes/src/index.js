@@ -3,8 +3,8 @@ import GridWithImage from './components/Blocks/Listing/GridWithImage/GridWithIma
 import GridServicos from './components/Blocks/Listing/GridServicos/GridServicos';
 import GridProg from './components/Blocks/Listing/GridProg/GridProg';
 
-import schemaEnhancerProg from './components/Blocks/Listing/GridProg/schemaEnhancer';
-import schemaEnhancerServicos from './components/Blocks/Listing/GridServicos/schemaEnhancer';
+//import schemaEnhancerProg from './components/Blocks/Listing/GridProg/schemaEnhancer';
+//import schemaEnhancerServicos from './components/Blocks/Listing/GridServicos/schemaEnhancer';
 
 //Locais
 import LocaisBlockEdit from './components/Blocks/LocaisBlock/Edit';
