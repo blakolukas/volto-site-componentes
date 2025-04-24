@@ -1,5 +1,6 @@
 import React from 'react';
 import PreviewImg from '../../../PreviewImg/PreviewImg';
+import './GridProg.css';
 
 const GridProg = ({ items = [] }) => {
   return (

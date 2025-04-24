@@ -1,5 +1,6 @@
 import React from 'react';
 import PreviewLink from '../../../PreviewLink/PreviewLink';
+import './GridServicos.css';
 
 const GridServicos = ({ items = [] }) => {
   return (

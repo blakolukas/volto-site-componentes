@@ -1,0 +1,48 @@
+@import '../../theme/variables.css';
+
+.ui.container.locais.listing {
+  max-width: var(--default-container-width) !important;
+}
+
+.block.locais > *:not(:empty) {
+  padding: 5px 0 0 0;
+}
+
+.telefone-wrapper > *:not(:empty) {
+  padding: 5px 0 0 0;
+}
+
+.titulo-wrapper-endereco {
+  display: flex;
+  align-items: center;
+  padding: 20px 0 10px 0;
+}
+
+.titulo-wrapper-endereco {
+  color: black;
+  &:hover {
+    color: var(--green-matriz-link-activated);
+  }
+}
+
+.titulo-endereco {
+  margin-left: 10px;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  .block.locais {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .block.locais {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .block.locais {
+    width: 1170px;
+  }
+}

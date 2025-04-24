@@ -1,0 +1,114 @@
+@import '../../../../theme/variables.css';
+
+.prog-grid {
+  display: flex;
+  max-width: var(--default-container-width);
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  margin: 20px auto;
+}
+
+.prog-grid-link {
+  display: grid;
+  width: 100%;
+  gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.prog-grid-link > a {
+  text-decoration: none !important;
+  transition:
+    transform 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out;
+}
+
+.prog-grid-link > a:hover {
+  transform: scale(1.05);
+}
+
+.prog-grid-item {
+  display: flex;
+  max-width: 400px;
+  max-height: 350px;
+  flex-direction: column;
+  padding: 17px;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.prog-grid-item .prog-image {
+  display: flex;
+  overflow: hidden;
+  width: auto;
+  height: 120px;
+  align-items: center;
+  justify-content: center;
+}
+
+.prog-image > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.color-0 {
+  background-color: var(--green-40);
+}
+.color-1 {
+  background-color: #008137;
+}
+.color-2 {
+  background-color: #e20613;
+}
+.color-3 {
+  background-color: #ffcc02;
+}
+
+.prog-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.prog-grid-item .prog-content h3 {
+  display: -webkit-box;
+  overflow: hidden;
+  margin: 0 !important;
+  -webkit-box-orient: vertical;
+  color: #333;
+  font-size: 18px;
+  font-weight: 350;
+  -webkit-line-clamp: 2;
+  text-align: left;
+  text-overflow: ellipsis;
+}
+
+.prog-grid-item .prog-content {
+  min-height: 60px;
+}
+
+.prog-grid-item > * {
+  justify-items: left;
+}
+
+.prog-grid-item .prog-content p {
+  margin: 5px 0 10px 0;
+  color: #666;
+  font-size: 14px;
+  text-align: left;
+}
+
+@media (max-width: 992px) {
+  .prog-grid-link {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .prog-grid-link {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

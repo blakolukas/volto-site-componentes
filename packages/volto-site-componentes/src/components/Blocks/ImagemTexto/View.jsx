@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react';
 import { flattenToAppURL } from '@plone/volto/helpers';
+import './ImagemTexto.css';
 
 const ImagemTextoBlockView = (props) => {
   const { data } = props;

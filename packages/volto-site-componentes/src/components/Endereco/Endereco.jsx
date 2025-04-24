@@ -2,6 +2,8 @@ import React from 'react';
 import { GoogleMap, LoadScript } from '@react-google-maps/api';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationPin } from '@fortawesome/free-solid-svg-icons';
+import './Endereco.css';
+import { UniversalLink } from '@plone/volto/components';
 
 const Endereco = ({ content }) => {
   const {
@@ -46,10 +48,10 @@ const Endereco = ({ content }) => {
       )}
       <div>
         {title && (
-          <div className="titulo-wrapper-endereco">
+          <UniversalLink item={content} className="titulo-wrapper-endereco">
             <FontAwesomeIcon icon={faLocationPin} />
             <span className="titulo-endereco">{title}</span>
-          </div>
+          </UniversalLink>
         )}
       </div>
       <div>
