@@ -19,9 +19,7 @@ const GridProg = ({ items = [] }) => {
           >
             <div className="prog-grid-item" key={item['@id']}>
               <div className="prog-content">
-                <h3>
-                  {item.title}
-                </h3>
+                <h3>{item.title}</h3>
               </div>
               <div className="prog-image">
                 <PreviewImg
