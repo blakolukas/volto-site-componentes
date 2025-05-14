@@ -48,3 +48,10 @@ html {
   color: gray;
   --theme-foreground-color: gray !important;
 }
+
+.block.listing .link-padrao,
+.block.search .link-padrao {
+  text-decoration: underline;
+  font-family: Noto Sans, sans-serif;
+}
+
