@@ -37,7 +37,9 @@
     "@eeacms/volto-accordion-block": "*",
 
     "@fortawesome/react-fontawesome": "*",
-    "@fortawesome/free-solid-svg-icons": "*"
+    "@fortawesome/free-solid-svg-icons": "*",
+    
+    "volto-form-block": "3.13.0"
 
   },
   "peerDependencies": {
