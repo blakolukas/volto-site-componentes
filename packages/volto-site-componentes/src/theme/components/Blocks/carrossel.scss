@@ -61,6 +61,21 @@
   word-wrap: break-word;
 }
 
+.grid-teaser-item.top > h3 {
+  position: absolute;
+  top: 40%;
+  max-width: var(--layout-container-width);
+  height: 20%;
+  align-content: end;
+  padding: 0 1.75%;
+  color: white;
+  font-size: 2vw;
+  line-height: 120%;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
 .grid-image-wrapper::after {
   position: absolute;
   bottom: 0;
@@ -73,6 +88,24 @@
 }
 
 .grid-teaser-item > a > p {
+  position: absolute;
+  top: 73%;
+
+  /* Limitar texto a duas linhas */
+  display: -webkit-box;
+  overflow: hidden;
+  max-width: var(--layout-container-width);
+  max-height: 11%;
+  padding: 0 1.75%;
+  -webkit-box-orient: vertical;
+  color: white;
+  font-size: 1.35vw;
+  -webkit-line-clamp: 2; /* Limita a 2 linhas */
+  line-height: 120%;
+  text-overflow: ellipsis;
+}
+
+.grid-teaser-item.top > p {
   position: absolute;
   top: 73%;
 

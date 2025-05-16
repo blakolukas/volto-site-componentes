@@ -1,6 +1,6 @@
 import React from 'react';
 import { UniversalLink, Image } from '@plone/volto/components';
-import './Banners.scss';
+import './Banners.css';
 
 const BannerBlockDefaultView = (props) => {
   const { banner1, banner2, banner3 } = props;
