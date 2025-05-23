@@ -4,15 +4,15 @@
 }
 
 .menu-lateral-container {
+  position: relative;
   display: flex;
-  flex-direction: column;
   width: fit-content;
   height: 100%;
-  position: relative;
-  float: left;
+  flex-direction: column;
   padding-left: 3%;
   margin-right: 30px;
   margin-bottom: 15px;
+  float: left;
 }
 
 .menu-lateral-title {
@@ -21,16 +21,16 @@
 
 .menu-lateral-list {
   display: flex;
-  flex-direction: column;
   width: 280px;
   height: 100%;
+  flex-direction: column;
   padding: 10px 20px;
   background-color: #cccccc;
 }
 
 .menu-lateral-list li {
-  list-style: none;
   padding: 10px;
+  list-style: none;
 }
 
 .menu-lateral-container .menu-lateral-list a {
@@ -38,17 +38,17 @@
 }
 
 .menu-lateral-list i {
-  color: #000;
   margin-right: 10px;
+  color: #000;
 }
 
 .menu-lateral-edit {
-  text-align: center;
-  font-weight: bolder;
-  margin: 0 !important;
   width: 100%;
-  font-size: 1rem;
+  margin: 0 !important;
   color: #666;
+  font-size: 1rem;
+  font-weight: bolder;
+  text-align: center;
 }
 
 .menu-lateral-item-active {
@@ -66,11 +66,11 @@
 }
 
 .menu-lateral-link-active {
-  color: #999999;
-  pointer-events: none;
-  cursor: default;
   border: none;
   background: none;
+  color: #999999;
+  cursor: default;
+  pointer-events: none;
 }
 
 .menu-lateral-dropdown {
@@ -90,7 +90,7 @@
 .menu-lateral-dropdown-container select {
   width: 100%;
   padding: 10px;
-  font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 5px;
+  font-size: 1rem;
 }
