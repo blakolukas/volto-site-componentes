@@ -56,3 +56,7 @@ html {
     sans-serif;
   text-decoration: underline;
 }
+
+.ui.drag.block.inner > * > div {
+  pointer-events: none;
+}

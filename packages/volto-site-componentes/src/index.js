@@ -1,5 +1,5 @@
 import ListaTelefones from './components/ListaTelefones/ListaTelefones';
-import GridWithImage from './components/Blocks/Listing/GridWithImage/GridWithImage';
+import Noticias from './components/Blocks/Listing/Noticias/Noticias';
 import GridServicos from './components/Blocks/Listing/GridServicos/GridServicos';
 import GridProg from './components/Blocks/Listing/GridProg/GridProg';
 
@@ -94,9 +94,9 @@ const applyConfig = (config) => {
   config.blocks.blocksConfig.listing.variations = [
     ...(config.blocks.blocksConfig.listing.variations || []),
     {
-      id: 'grid-with-image',
-      title: 'Grid with Image',
-      template: GridWithImage,
+      id: 'noticias',
+      title: 'Notícias',
+      template: Noticias,
     },
   ];
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import PreviewLink from '../../../PreviewLink/PreviewLink';
-import './GridWithImage.css';
+import './Noticias.css';
 
 const GridWithImage = ({ items = [] }) => {
   return (
