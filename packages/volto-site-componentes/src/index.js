@@ -16,6 +16,9 @@ import ImagemTextoBlockEdit from './components/Blocks/ImagemTexto/Edit';
 import ImagemTextoBlockView from './components/Blocks/ImagemTexto/View';
 import imageTextoSVG from '@plone/volto/icons/image.svg';
 
+import MenuLateralBlockEdit from './components/Blocks/MenuLateral/Edit';
+import MenuLateralBlockView from './components/Blocks/MenuLateral/View';
+
 //reducers
 import defaultReducers from '@plone/volto/reducers';
 import locais from './reducers/locais/locais';
@@ -52,6 +55,16 @@ const applyConfig = (config) => {
     icon: imageTextoSVG,
     edit: ImagemTextoBlockEdit,
     view: ImagemTextoBlockView,
+    sidebarTab: 1,
+  };
+
+  config.blocks.blocksConfig.menuLateralBlock = {
+    id: 'menuLateralBlock',
+    title: 'Menu Lateral',
+    group: 'procergs',
+    icon: imageTextoSVG,
+    edit: MenuLateralBlockEdit,
+    view: MenuLateralBlockView,
     sidebarTab: 1,
   };
 

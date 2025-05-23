@@ -1,0 +1,101 @@
+.menuLateralBlock{
+    width: 100%;
+    min-height: 30px;
+    
+}
+
+.menu-lateral-container{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: 100%;
+    position: relative;
+    float: left;
+    padding-left: 3%;
+    margin-right: 30px;
+    margin-bottom: 15px;
+
+}
+
+.menu-lateral-title{
+    margin: 0;
+}
+
+.menu-lateral-list{
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+    height: 100%;
+    padding: 10px 20px;
+    background-color: #cccccc;
+}
+
+.menu-lateral-list li{
+    list-style: none;
+    padding: 10px;
+}
+
+.menu-lateral-container .menu-lateral-list a {
+  color: #000 !important; /* Sobrescreve a cor verde */
+}
+
+.menu-lateral-list i{
+    color: #000;
+    margin-right: 10px;
+}
+
+.menu-lateral-edit {
+  text-align: center; /* Centraliza o texto horizontalmente */
+  font-weight: bolder;
+  margin: 0 !important; /* Garante que o elemento esteja centralizado */
+  width: 100%; /* Opcional: ajusta a largura para ocupar todo o bloco */
+  font-size: 1rem; /* Ajuste do tamanho da fonte, se necessário */
+  color: #666; /* #999999 */
+}
+
+.menu-lateral-item-active {
+  color: #999999; /* Cor do texto do item ativo */
+  font-weight: bold; /* Opcional: destaque para o item ativo */
+}
+
+.menu-lateral-item-active i {
+  color: #999999; /* Cor do ícone do item ativo */
+}
+
+/* Estilo padrão para os links */
+.menu-lateral-link {
+  color: #000; /* Cor padrão */
+  text-decoration: none;
+}
+
+/* Estilo para o link ativo */
+.menu-lateral-link-active {
+  color: #999999; /* Cor do link ativo */
+  pointer-events: none; /* Desabilita o clique */
+  cursor: default; /* Altera o cursor para indicar que o link está desabilitado */
+  border: none; /* Remove a borda */
+  background: none; /* Remove o fundo */
+}
+
+.menu-lateral-dropdown {
+  display: none;
+}
+
+/* A partir de 992px, esconde o menu-lateral-caixa e exibe o menu-lateral-dropdown */
+@media (max-width: 992px) {
+  .menu-lateral-caixa {
+    display: none;
+  }
+
+  .menu-lateral-dropdown {
+    display: block;
+  }
+}
+
+.menu-lateral-dropdown-container select {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
