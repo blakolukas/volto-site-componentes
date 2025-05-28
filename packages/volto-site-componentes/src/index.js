@@ -29,6 +29,8 @@ import BannerBlockView from './components/Blocks/Banner/View';
 import BannerBlockEdit from './components/Blocks/Banner/Edit';
 import bannerSVG from '@plone/volto/icons/home.svg';
 
+import CpfWidget from './components/Widgets/FormWidgets/CpfWidget';
+
 //gray and small text
 
 import installSlate from './editor';
@@ -117,6 +119,13 @@ const applyConfig = (config) => {
       template: GridProg,
     },
   ];
+
+  config.blocks.blocksConfig.form.additionalFields.push({
+    id: 'CpfWidget',
+    label: 'CPF',
+    component: CpfWidget,
+    isValid: (formData, name) => true,
+  });
 
   config.blocks.blocksConfig.banner = {
     id: 'banner',
