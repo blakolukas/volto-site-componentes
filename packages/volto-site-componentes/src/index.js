@@ -30,6 +30,7 @@ import BannerBlockEdit from './components/Blocks/Banner/Edit';
 import bannerSVG from '@plone/volto/icons/home.svg';
 
 import CpfWidget from './components/Widgets/FormWidgets/CpfWidget';
+import ListaAnexosWidget from './components/Widgets/FormWidgets/ListaAnexosWidget';
 
 //gray and small text
 
@@ -124,6 +125,13 @@ const applyConfig = (config) => {
     id: 'CpfWidget',
     label: 'CPF',
     component: CpfWidget,
+    isValid: (formData, name) => true,
+  });
+
+  config.blocks.blocksConfig.form.additionalFields.push({
+    id: 'ListaAnexosWidget',
+    label: 'Lista de Anexos',
+    component: ListaAnexosWidget,
     isValid: (formData, name) => true,
   });
 
