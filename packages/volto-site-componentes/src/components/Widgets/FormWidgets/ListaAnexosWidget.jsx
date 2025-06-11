@@ -80,6 +80,11 @@ const ListaAnexosWidget = ({
           onDragOver={handleDragOver}
           onDragLeave={handleDragLeave}
           tabIndex={-1}
+          onClick={() => {
+            if (!disabled && inputRef.current) {
+              inputRef.current.click();
+            }
+          }}
           aria-label="Solte arquivos aqui para anexar"
         >
           Solte um arquivo aqui para enviar um novo arquivo
