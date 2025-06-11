@@ -28,8 +28,9 @@ const ListaAnexosWidget = ({
       (newFile) =>
         !currentFiles.some(
           (existingFile) =>
-            existingFile.name === newFile.name && existingFile.size === newFile.size
-        )
+            existingFile.name === newFile.name &&
+            existingFile.size === newFile.size,
+        ),
     );
     if (filteredFiles.length > 0) {
       const newValue = [...currentFiles, ...filteredFiles];
@@ -66,7 +67,9 @@ const ListaAnexosWidget = ({
   const error = externalError;
 
   return (
-    <div className={`field lista-anexos-widget ${touched && error ? 'error' : ''}`}>
+    <div
+      className={`field lista-anexos-widget ${touched && error ? 'error' : ''}`}
+    >
       {title && (
         <label className="lista-anexos-titulo" htmlFor={id}>
           {title}
@@ -76,16 +79,30 @@ const ListaAnexosWidget = ({
       <div className="lista-anexos-input-wrapper">
         <div
           className={`lista-anexos-dropzone${dragActive ? ' drag-active' : ''}`}
+          aria-label="Solte arquivos aqui para anexar"
           onDrop={handleDrop}
           onDragOver={handleDragOver}
           onDragLeave={handleDragLeave}
-          tabIndex={-1}
           onClick={() => {
             if (!disabled && inputRef.current) {
               inputRef.current.click();
             }
           }}
-          aria-label="Solte arquivos aqui para anexar"
+          onKeyDown={(e) => {
+            if (
+              !disabled &&
+              (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar')
+            ) {
+              e.preventDefault();
+              if (inputRef.current) inputRef.current.click();
+            }
+          }}
+          role="button"
+          tabIndex={0}
+          style={{
+            cursor: disabled ? 'not-allowed' : 'pointer',
+            display: 'block',
+          }}
         >
           Solte um arquivo aqui para enviar um novo arquivo
         </div>
@@ -104,23 +121,23 @@ const ListaAnexosWidget = ({
         <label
           htmlFor={id}
           className="lista-anexos-custom-btn"
-          tabIndex={0}
           style={{ userSelect: 'none' }}
         >
           Escolher arquivos
         </label>
         <div className="lista-anexos-list-wrapper">
-          {(value && value.length > 0) && (
+          {value && value.length > 0 && (
             <ul className="lista-anexos-list">
               {value.map((file, idx) => (
                 <li key={idx} className="lista-anexos-item">
-                  {file.name || (file.filename || 'Arquivo')}
+                  {file.name || file.filename || 'Arquivo'}
                   <button
                     type="button"
                     onClick={() => handleRemove(idx)}
                     className="lista-anexos-remove"
                     disabled={disabled}
                     aria-label="Remover anexo"
+                    onMouseUp={(e) => e.currentTarget.blur()}
                   >
                     <i className="icon trash" />
                   </button>
@@ -130,9 +147,7 @@ const ListaAnexosWidget = ({
           )}
         </div>
         {error && error.length > 0 && (
-          <div className="lista-anexos-error ui basic label">
-            {error}
-          </div>
+          <div className="lista-anexos-error ui basic label">{error}</div>
         )}
         {description && <small>{description}</small>}
       </div>

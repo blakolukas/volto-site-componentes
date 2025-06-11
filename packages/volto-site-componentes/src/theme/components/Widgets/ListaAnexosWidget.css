@@ -33,7 +33,7 @@
   background-color: #fff;
   border: 2px solid #007eb1;
   border-radius: 10px;
-  color: #007eb1;
+  color: #007eb1 !important;
   cursor: pointer;
   display: inline-block;
   font-size: 1rem;
@@ -45,9 +45,10 @@
 }
 
 .lista-anexos-custom-btn:hover,
-.lista-anexos-custom-btn:focus {
+.lista-anexos-custom-btn:focus,
+.lista-anexos-custom-btn:active {
   background: #e3f4fb;
-  color: #005b7f;
+  color: #007eb1;
   outline: none;
 }
 
