@@ -102,6 +102,7 @@
 .lista-anexos-error {
   padding-left: 0;
   border: none;
+  margin-top: 20px !important;
   background: none;
-  color: #d01157;
+  color: #d01157 !important;
 }

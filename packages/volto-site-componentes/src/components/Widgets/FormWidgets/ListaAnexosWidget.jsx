@@ -2,6 +2,9 @@ import React, { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import '../../../theme/components/Widgets/ListaAnexosWidget.css';
 
+const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5 MB
+const MAX_FILES = 5; // Limite de arquivos
+
 const ListaAnexosWidget = ({
   id,
   value,
@@ -15,6 +18,7 @@ const ListaAnexosWidget = ({
 }) => {
   const [touched, setTouched] = useState(false);
   const [dragActive, setDragActive] = useState(false);
+  const [fileError, setFileError] = useState(externalError);
   const inputRef = useRef(null);
 
   const handleFilesChange = (e) => {
@@ -32,10 +36,27 @@ const ListaAnexosWidget = ({
             existingFile.size === newFile.size,
         ),
     );
+
+    if (currentFiles.length + filteredFiles.length > MAX_FILES) {
+      setFileError(`Você pode adicionar no máximo ${MAX_FILES} arquivos.`);
+      if (inputRef.current) inputRef.current.value = '';
+      return;
+    }
+
+    const tooBig = filteredFiles.find((file) => file.size > MAX_FILE_SIZE);
+    if (tooBig) {
+      setFileError(
+        `O arquivo "${tooBig.name}" excede o tamanho máximo de 5 MB.`,
+      );
+      if (inputRef.current) inputRef.current.value = '';
+      return;
+    }
+
     if (filteredFiles.length > 0) {
       const newValue = [...currentFiles, ...filteredFiles];
       onChange(id, newValue);
       setTouched(true);
+      setFileError(null);
     }
     if (inputRef.current) inputRef.current.value = '';
   };
@@ -64,11 +85,9 @@ const ListaAnexosWidget = ({
     onChange(id, newValue);
   };
 
-  const error = externalError;
-
   return (
     <div
-      className={`field lista-anexos-widget ${touched && error ? 'error' : ''}`}
+      className={`field lista-anexos-widget ${touched && fileError ? 'error' : ''}`}
     >
       {title && (
         <label className="lista-anexos-titulo" htmlFor={id}>
@@ -146,8 +165,8 @@ const ListaAnexosWidget = ({
             </ul>
           )}
         </div>
-        {error && error.length > 0 && (
-          <div className="lista-anexos-error ui basic label">{error}</div>
+        {fileError && fileError.length > 0 && (
+          <div className="lista-anexos-error ui basic label">{fileError}</div>
         )}
         {description && <small>{description}</small>}
       </div>
