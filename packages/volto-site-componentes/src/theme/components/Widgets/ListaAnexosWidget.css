@@ -20,8 +20,8 @@
 
 .lista-anexos-input {
   display: inline-block;
-  border: 2px solid #007eb1;
   padding: 7px 10px;
+  border: 2px solid #007eb1;
   margin-top: 20px;
   border-radius: 10px;
   color: #007eb1;
@@ -32,10 +32,10 @@
 .lista-anexos-custom-btn {
   display: inline-block;
   width: fit-content;
-  border: 2px solid #007eb1;
   padding: 7px 10px;
-  margin-top: 20px;
+  border: 2px solid #007eb1;
   border-radius: 10px;
+  margin-top: 20px;
   background-color: #fff;
   color: #007eb1 !important;
   cursor: pointer;
