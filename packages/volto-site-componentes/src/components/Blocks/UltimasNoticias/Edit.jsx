@@ -1,33 +1,38 @@
-// src/components/Blocks/Gallery/Edit.jsx
 import React from 'react';
 import { withBlockExtensions } from '@plone/volto/helpers';
 import { SidebarPortal, BlockDataForm } from '@plone/volto/components';
 import UltimasBlock from './View';
-import { ultimasSchema } from './schema'; // updated import
+import UltimasBlockList from './ViewLista';
+import { ultimasSchema } from './schema';
 
-//import { useIntl } from 'react-intl';
+const variationComponent = {
+  default: UltimasBlock,
+  list: UltimasBlockList,
+};
 
 const UltimasNoticiasEdit = (props) => {
-  const { data, onChangeBlock, selected } = props;
-  //const intl = useIntl();
+  const { data, onChangeBlock, selected, block, blocksConfig } = props;
   const schema = ultimasSchema({ ...props });
+
+  const variationId = data?.variation || 'default';
+  const VariationComponent = variationComponent[variationId] || UltimasBlock;
 
   return (
     <>
-      <UltimasBlock {...props} isEditMode />
+      <VariationComponent {...props} isEditMode />
       <SidebarPortal selected={selected}>
         <BlockDataForm
           schema={schema}
           formData={data}
           onChangeField={(id, value) => {
-            onChangeBlock(props.block, {
+            onChangeBlock(block, {
               ...data,
               [id]: value,
             });
           }}
           onChangeBlock={onChangeBlock}
-          block={props.block}
-          blocksConfig={props.blocksConfig}
+          block={block}
+          blocksConfig={blocksConfig}
           navRoot={props.navRoot}
           contentType={props.contentType}
         />

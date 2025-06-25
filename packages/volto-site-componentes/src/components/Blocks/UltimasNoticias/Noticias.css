@@ -10,7 +10,6 @@
   display: grid;
   width: 100%;
   gap: 20px;
-  grid-template-columns: repeat(3, 1fr);
 }
 
 .custom-grid-link > a {

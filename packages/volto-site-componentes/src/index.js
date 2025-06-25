@@ -35,7 +35,7 @@ import ListaAnexosWidget from './components/Widgets/FormWidgets/ListaAnexosWidge
 
 //ultimas noticias
 import UltimasNoticiasEdit from './components/Blocks/UltimasNoticias/Edit';
-import UltimasNoticiasView from './components/Blocks/UltimasNoticias/View';
+import UltimasNoticiasViewDispatcher from './components/Blocks/UltimasNoticias/UltimasNoticiasDispatcher';
 
 //gray and small text
 
@@ -72,8 +72,34 @@ const applyConfig = (config) => {
     group: 'procergs',
     icon: imageTextoSVG,
     edit: UltimasNoticiasEdit,
-    view: UltimasNoticiasView,
+    view: UltimasNoticiasViewDispatcher, // <-- dispatcher aqui!
     sidebarTab: 1,
+    variations: [
+      {
+        id: 'default',
+        title: '3 itens (padrão)',
+        template: 'default',
+        isDefault: true,
+      },
+      {
+        id: 'list',
+        title: 'Lista (1-4 itens)',
+        template: 'list',
+        schemaEnhancer: ({ schema }) => {
+          if (!schema.fieldsets[0].fields.includes('maxItems')) {
+            schema.fieldsets[0].fields.push('maxItems');
+          }
+          schema.properties.maxItems = {
+            title: 'Quantidade de itens',
+            type: 'number',
+            minimum: 1,
+            maximum: 4,
+            default: 3,
+          };
+          return schema;
+        },
+      },
+    ],
   };
 
   config.blocks.blocksConfig.menuLateralBlock = {
