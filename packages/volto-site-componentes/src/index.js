@@ -2,6 +2,7 @@ import ListaTelefones from './components/ListaTelefones/ListaTelefones';
 import Noticias from './components/Blocks/Listing/Noticias/Noticias';
 import GridServicos from './components/Blocks/Listing/GridServicos/GridServicos';
 import GridProg from './components/Blocks/Listing/GridProg/GridProg';
+import BlocoLocoView from './components/Blocks/BlocoLoco/View';
 
 //import schemaEnhancerProg from './components/Blocks/Listing/GridProg/schemaEnhancer';
 //import schemaEnhancerServicos from './components/Blocks/Listing/GridServicos/schemaEnhancer';
@@ -186,6 +187,14 @@ const applyConfig = (config) => {
     edit: BannerBlockEdit,
     view: BannerBlockView,
     sidebarTab: 1,
+  };
+
+  config.blocks.blocksConfig.blocoLoco = {
+    id: 'blocoLoco',
+    title: 'Bloco Loco',
+    group: 'procergs',
+    icon: imageTextoSVG,
+    view: BlocoLocoView,
   };
 
   return config;
