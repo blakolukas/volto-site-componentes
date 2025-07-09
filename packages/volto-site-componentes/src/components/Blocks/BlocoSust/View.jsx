@@ -1,4 +1,4 @@
-import './BlocoLoco.css';
+import './BlocoSust.css';
 import Camada_1 from './img/Camada_1.svg';
 import Camada_2 from './img/Camada_2.svg';
 import Camada_3 from './img/Camada_3.svg';
@@ -17,22 +17,26 @@ import Hover7 from './hover/Hover7.svg';
 import vector1 from './vectors/vector1.svg';
 import vector3 from './vectors/vector3.svg';
 import vector2 from './vectors/vector2.svg';
+import vector1_2 from './vectors/vector1-2.svg';
+import vector2_1 from './vectors/vector2-1.svg';
 
-const BlocoLocoView = () => {
+const BlocoSustView = () => {
   return (
-    <div className="loco-container" style={{ backgroundColor: '#2D2D2D' }}>
+    <div style={{ backgroundColor: '#2D2D2D' }}>
+    <h1 className='sust-title'>como o sustentare funciona</h1>
+    <div className="sust-container" style={{ backgroundColor: '#2D2D2D' }}>
       {/* 2 Primeiros */}
-      <div className="loco-one-to-another">
+      <div className="sust-one-to-another">
         {/* Recolhimento do material */}
-        <div className="loco-item one">
+        <div className="sust-item one">
           <img
             src={Camada_1}
-            alt="Bloco Loco"
+            alt="Bloco Sust"
             style={{ height: '144px', width: '145px' }}
             onMouseEnter={(e) => (e.target.src = Hover1)}
             onMouseLeave={(e) => (e.target.src = Camada_1)}
           />
-          <div className="loco-item-text" style={{ placeContent: 'end' }}>
+          <div className="sust-item-text" style={{ placeContent: 'end' }}>
             <span
               style={{
                 fontSize: '18px',
@@ -49,18 +53,18 @@ const BlocoLocoView = () => {
         </div>
 
         {/* Vector */}
-        <img src={vector1} alt="vector" className='vector1'/>
+        <img src={vector1} alt="vector" className="vector1" />
 
         {/* Triagem */}
-        <div className="loco-item two">
+        <div className="sust-item two">
           <img
             src={Camada_2}
-            alt="Bloco Loco"
+            alt="Bloco Sust"
             style={{ height: '155px', width: '134px' }}
             onMouseEnter={(e) => (e.target.src = Hover2)}
             onMouseLeave={(e) => (e.target.src = Camada_2)}
           />
-          <div className="loco-item-text">
+          <div className="sust-item-text">
             <span
               style={{
                 fontSize: '18px',
@@ -78,27 +82,24 @@ const BlocoLocoView = () => {
       </div>
 
       {/* Meio */}
-      <div
-        className='loco-meio'
-      >
-        <div className="loco-one-to-another">
+      <div className="sust-meio">
+        <div className="sust-one-to-another">
+          <img src={vector1_2} alt="vector" className="vector1_2 hidden" />
           {/* Flecha 3 */}
-          <img src={vector3} alt="vector" className='vector3 gone'/>
+          <img src={vector3} alt="vector" className="vector3 gone" />
 
           {/* 3 Itens */}
-          <div
-            className='loco-meio-itens'
-          >
+          <div className="sust-meio-itens">
             {/* Recuperáveis */}
-            <div className="loco-item">
+            <div className="sust-item">
               <img
                 src={Camada_3}
-                alt="Bloco Loco"
+                alt="Bloco Sust"
                 style={{ height: '96px', width: '108px' }}
                 onMouseEnter={(e) => (e.target.src = Hover3)}
                 onMouseLeave={(e) => (e.target.src = Camada_3)}
               />
-              <div className="loco-item-text">
+              <div className="sust-item-text">
                 <span
                   style={{
                     fontSize: '18px',
@@ -115,15 +116,15 @@ const BlocoLocoView = () => {
             </div>
 
             {/* Ociosos */}
-            <div className="loco-item">
+            <div className="sust-item">
               <img
                 src={Camada_4}
-                alt="Bloco Loco"
+                alt="Bloco Sust"
                 style={{ height: '106px', width: '94px' }}
                 onMouseEnter={(e) => (e.target.src = Hover4)}
                 onMouseLeave={(e) => (e.target.src = Camada_4)}
               />
-              <div className="loco-item-text">
+              <div className="sust-item-text">
                 <span
                   style={{
                     fontSize: '18px',
@@ -140,15 +141,15 @@ const BlocoLocoView = () => {
             </div>
 
             {/* Irrecuperáveis */}
-            <div className="loco-item gone">
+            <div className="sust-item gone">
               <img
                 src={Camada_5}
-                alt="Bloco Loco"
+                alt="Bloco Sust"
                 style={{ height: '106px', width: '156px' }}
                 onMouseEnter={(e) => (e.target.src = Hover5)}
                 onMouseLeave={(e) => (e.target.src = Camada_5)}
               />
-              <div className="loco-item-text">
+              <div className="sust-item-text">
                 <span
                   style={{
                     fontSize: '18px',
@@ -167,9 +168,15 @@ const BlocoLocoView = () => {
           </div>
         </div>
 
+        <img
+          src={vector2_1}
+          alt="vector"
+          className="vector2_1 hidden"
+        />
+
         {/* 3 Flechas */}
-        <div className="loco-one-to-another">
-          <div className="loco-two-vectors gone">
+        <div className="sust-one-to-another">
+          <div className="sust-two-vectors gone">
             <div
               style={{
                 height: '100%',
@@ -177,53 +184,61 @@ const BlocoLocoView = () => {
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
-                paddingBottom: '20px',
+                paddingBottom: '30px',
               }}
             >
               {/* Flecha maior */}
-              <div className="loco-two-vector ">
+              <div className="sust-two-vector ">
                 <img
                   src={vector2}
                   alt="vector"
-                  className="loco-one-to-one vector2"
-                  style={{ transform: 'translateX(25%) translateY(60%)' }}
+                  className="sust-one-to-one vector2"
+                  style={{ transform: 'translateX(20%) translateY(80%)' }}
                 />
               </div>
 
               {/* Flecha */}
-              <div className="loco-two-vector ">
-                <img src={vector1} alt="vector" className="loco-one-to-one vector1" />
+              <div className="sust-two-vector ">
+                <img
+                  src={vector1}
+                  alt="vector"
+                  className="sust-one-to-one vector1"
+                />
               </div>
 
               {/* Flecha */}
-              <div className="loco-two-vector">
-                <img src={vector1} alt="vector" className="loco-one-to-one vector1" />
+              <div className="sust-two-vector">
+                <img
+                  src={vector1}
+                  alt="vector"
+                  className="sust-one-to-one vector1"
+                />
               </div>
             </div>
           </div>
 
           {/* 2 Ultimos */}
-          <div className="loco-two-vectors">
+          <div className="sust-two-vectors">
             <div
               style={{
                 height: '56%',
-                width: '180px',
+                width: '200px',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
               }}
             >
               {/* Doação */}
-              <div className="loco-two-vector">
-                <div className="loco-item">
+              <div className="sust-two-vector">
+                <div className="sust-item">
                   <img
                     src={Camada_6}
-                    alt="Bloco Loco"
+                    alt="Bloco Sust"
                     style={{ height: '130px', width: '92px' }}
                     onMouseEnter={(e) => (e.target.src = Hover6)}
                     onMouseLeave={(e) => (e.target.src = Camada_6)}
                   />
-                  <div className="loco-item-text">
+                  <div className="sust-item-text">
                     <span
                       style={{
                         fontSize: '18px',
@@ -241,16 +256,16 @@ const BlocoLocoView = () => {
               </div>
 
               {/* Reaproveitamento pela indústria */}
-              <div className="loco-two-vector gone">
-                <div className="loco-item">
+              <div className="sust-two-vector gone">
+                <div className="sust-item">
                   <img
                     src={Camada_7}
-                    alt="Bloco Loco"
+                    alt="Bloco Sust"
                     style={{ height: '82px', width: '117px' }}
                     onMouseEnter={(e) => (e.target.src = Hover7)}
                     onMouseLeave={(e) => (e.target.src = Camada_7)}
                   />
-                  <div className="loco-item-text">
+                  <div className="sust-item-text">
                     <span
                       style={{
                         fontSize: '18px',
@@ -268,10 +283,90 @@ const BlocoLocoView = () => {
               </div>
             </div>
           </div>
+          <div
+            className='hidden'
+            style={{
+              height: '800px',
+              width: '100%',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            <h1
+              className='hidden'
+              style={{
+                fontSize: '20px',
+                fontWeight: 'bold',
+                textTransform: 'uppercase',
+                color: '#00B033',
+                textAlign: 'center',
+                marginBottom: '0',
+              }}
+            >
+              Em caso de não reaproveitamento:
+            </h1>
+            <div className="sust-one-to-another">
+              <div className="sust-item hidden" style={{width: "200px"}}>
+                <img
+                  src={Camada_5}
+                  alt="Bloco Sust"
+                  style={{ height: '190px', width: '156px' }}
+                  onMouseEnter={(e) => (e.target.src = Hover5)}
+                  onMouseLeave={(e) => (e.target.src = Camada_5)}
+                />
+                <div className="sust-item-text" style={{ placeContent: 'end' }}>
+                  <span
+                    style={{
+                      fontSize: '18px',
+                      fontWeight: 'bold',
+                      textTransform: 'uppercase',
+                    }}
+                  >
+                    Irrecuperáveis
+                  </span>
+                  <span style={{ fontSize: '14px' }}>
+                    Reciclagem assistida onde componentes passam pela
+                    descaracterização
+                  </span>
+                </div>
+              </div>
+
+              {/* Vector */}
+              <img src={vector1} alt="vector" className="vector1 hidden" />
+
+              
+              <div className="sust-item hidden" style={{width:"200px"}}>
+                <img
+                  src={Camada_7}
+                  alt="Bloco Sust"
+                  style={{ height: '82px', width: '117px' }}
+                  onMouseEnter={(e) => (e.target.src = Hover7)}
+                  onMouseLeave={(e) => (e.target.src = Camada_7)}
+                />
+                <div className="sust-item-text">
+                  <span
+                    style={{
+                      fontSize: '18px',
+                      fontWeight: 'bold',
+                      textTransform: 'uppercase',
+                    }}
+                  >
+                    reaproveitamento pela indústria
+                  </span>
+                  <span style={{ fontSize: '14px' }}>
+                    Envio para empresas que reaproveitam pó residual
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };
 
-export default BlocoLocoView;
+export default BlocoSustView;

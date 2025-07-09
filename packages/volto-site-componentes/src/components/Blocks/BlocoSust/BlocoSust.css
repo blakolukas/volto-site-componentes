@@ -1,4 +1,4 @@
-.loco-one-to-another {
+.sust-one-to-another {
     height: 100%;
     display: flex;
     gap: 20px;
@@ -6,7 +6,17 @@
     align-items: center !important;
 }
 
-.loco-two-vectors {
+.sust-title{
+    font-size: 40px;
+    text-transform: uppercase;
+    width: 100%;
+    color: #00B033;
+    font-weight: bold;
+    margin-bottom: 0;
+    padding: 0 0 0 20px;
+}
+
+.sust-two-vectors {
     height: 80%;
     display: flex;
     flex-direction: column;
@@ -14,15 +24,15 @@
     place-content: flex-end;
 }
 
-.loco-two-vector {
+.sust-two-vector {
     height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.loco-container {
-    height: 700px;
+.sust-container {
+    height: 750px;
     gap: 20px;
     display: flex;
     flex-direction: row;
@@ -30,7 +40,7 @@
     justify-content: center;
 }
 
-.loco-item {
+.sust-item {
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -45,7 +55,7 @@
     width: 134px;
 }
 
-.loco-meio {
+.sust-meio {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -53,17 +63,17 @@
     height: 100%;
 }
 
-.loco-meio-itens {
+.sust-meio-itens {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0px;
+    gap: 30px;
     height: 100%;
     width: 180px;
-    padding-top: 100px;
+    padding-top: 85px;
 }
 
-.loco-item-text {
+.sust-item-text {
     display: flex;
     height: 70px;
     flex-direction: column;
@@ -71,40 +81,61 @@
     place-self: end;
 }
 
-.loco-item-text span:nth-child(1) {
+.sust-item-text span:nth-child(1) {
     font-size: 16px;
     place-content: end;
     font-weight: bold;
     text-transform: uppercase;
-    color: #fff;
+    color: #F0EAD7;
 }
 
-.loco-item-text span:nth-child(2) {
+.sust-item-text span:nth-child(2) {
     font-size: 12px;
-    color: #fff;
+    color: #F0EAD7;
 }
 
-@media (max-width: 1024px) {
-    .loco-container {
+.hidden{
+    display: none;
+}
+
+.vector2_1{
+    width: 50%;
+}
+
+.vector1_2{
+    width: 50%;
+}
+
+@media (max-width: 1279px) {
+    .sust-title{
+        font-size: 24px;
+        padding: 20px 0;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: rgb(0, 176, 51);
+        text-align: center;
+    }
+    .sust-container {
         height: max-content;
         flex-direction: column;
         align-items: center;
         justify-content: center;
     }
 
-    .loco-one-to-another {
+    .sust-one-to-another {
         height: unset;
         flex-direction: column;
         align-items: center;
         justify-content: center;
     }
 
-    .loco-meio {
+    .sust-meio {
         flex-direction: column;
         align-items: center;
         justify-content: center;
     }
-    .loco-meio-itens {
+    .sust-meio-itens {
+        margin-bottom: 20px;
         flex-direction: row;
         align-items: center;
         justify-content: center;
@@ -122,30 +153,32 @@
         display: none !important;
     }
 
-    .loco-two-vectors {
+    .hidden{
+        display: flex;
+    }
+
+    .sust-two-vectors {
         padding-top: 100px;
     }
-    .loco-item {
+    .sust-item {
         height: 100%;
         align-items: center;
         justify-content: center;
     }
 
-    .loco-item-text {
+    .sust-item-text {
         align-items: center;
         justify-content: center;
     }
 
-    .loco-item-text span:nth-child(1) {
+    .sust-item-text span:nth-child(1) {
         justify-content: center;
         text-align: center;
         font-size: 12px;
     }
-    .loco-item-text span:nth-child(2) {
+    .sust-item-text span:nth-child(2) {
         justify-content: center;
         text-align: center;
         font-size: 10px;
     }
-
-    
 }
