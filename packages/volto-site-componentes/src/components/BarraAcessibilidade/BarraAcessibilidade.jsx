@@ -92,7 +92,11 @@ const BarraAcessibilidade = ({ svgImage }) => {
     <div className="acessibilidade">
       <div className="acess-container">
         <div className="acess-wrapper">
-          {svgImage && <div className="acess-svg"><img src={svgImage} alt="Logo" /></div>}
+          {svgImage && (
+            <div className="acess-svg">
+              <img src={svgImage} alt="Logo" />
+            </div>
+          )}
           <div className="acess-menus">
             <div className="acess-right">
               <ul className="acess-ul">
