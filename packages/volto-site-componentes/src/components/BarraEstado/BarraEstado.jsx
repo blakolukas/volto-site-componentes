@@ -121,7 +121,7 @@ const BarraEstado = () => {
                     target="_self"
                     href="https://www.rs.gov.br/guria"
                     style={{
-                      padding: '7px 0 7px 13px',
+                      padding: '7px 13px',
                     }}
                   >
                     <span className="visually-hidden">Estado </span>
