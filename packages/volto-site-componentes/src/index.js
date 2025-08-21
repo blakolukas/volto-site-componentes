@@ -2,6 +2,8 @@ import ListaTelefones from './components/ListaTelefones/ListaTelefones';
 import Noticias from './components/Blocks/Listing/Noticias/Noticias';
 import GridServicos from './components/Blocks/Listing/GridServicos/GridServicos';
 import GridProg from './components/Blocks/Listing/GridProg/GridProg';
+import BarraEstado from './components/BarraEstado/BarraEstado';
+import BarraAcessibilidade from './components/BarraAcessibilidade/BarraAcessibilidade';
 
 //import schemaEnhancerProg from './components/Blocks/Listing/GridProg/schemaEnhancer';
 //import schemaEnhancerServicos from './components/Blocks/Listing/GridServicos/schemaEnhancer';
@@ -192,3 +194,6 @@ const applyConfig = (config) => {
 };
 
 export default applyConfig;
+
+// Export components for external use
+export { BarraEstado, BarraAcessibilidade };
