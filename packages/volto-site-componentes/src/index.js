@@ -21,6 +21,10 @@ import imageTextoSVG from '@plone/volto/icons/image.svg';
 import MenuLateralBlockEdit from './components/Blocks/MenuLateral/Edit';
 import MenuLateralBlockView from './components/Blocks/MenuLateral/View';
 
+// Noticias com destaque
+import NoticiasComDestaqueEdit from './components/Blocks/NoticiasComDestaque/Edit';
+import NoticiasComDestaqueView from './components/Blocks/NoticiasComDestaque/View';
+import destaqueSVG from '@plone/volto/icons/list-bullet.svg';
 //reducers
 import defaultReducers from '@plone/volto/reducers';
 import locais from './reducers/locais/locais';
@@ -111,6 +115,17 @@ const applyConfig = (config) => {
     icon: imageTextoSVG,
     edit: MenuLateralBlockEdit,
     view: MenuLateralBlockView,
+    sidebarTab: 1,
+  };
+
+  // Bloco Notícias com Destaque
+  config.blocks.blocksConfig.noticiasComDestaque = {
+    id: 'noticiasComDestaque',
+    title: 'Notícias com destaque',
+    group: 'procergs',
+    icon: destaqueSVG,
+    edit: NoticiasComDestaqueEdit,
+    view: NoticiasComDestaqueView,
     sidebarTab: 1,
   };
 
