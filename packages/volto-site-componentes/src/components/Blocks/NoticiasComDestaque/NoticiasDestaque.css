@@ -1,0 +1,97 @@
+/* Container */
+.nd-wrapper {
+  width: 100%;
+}
+
+.nd-loading {
+  font-size: 0.95rem;
+}
+
+/* Grid: left highlight and right list */
+.nd-grid {
+  display: grid;
+  align-items: start;
+  gap: 24px;
+  grid-template-columns: 2fr 1.2fr;
+}
+
+/* Make the right column fill the row height and stack content */
+.nd-right {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch; /* stretch to the same height as the left column */
+}
+
+.nd-left-card,
+.nd-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.nd-left-image,
+.nd-card-image {
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.nd-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.nd-left-title {
+  margin: 12px 0 0 0;
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.nd-right-heading {
+  margin: 0 0 12px 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.nd-right-list {
+  display: grid;
+  /* take available vertical space to push the footer (dotted + link) to the bottom */
+  flex: 1 1 auto;
+  gap: 16px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.nd-card-title {
+  margin: 8px 0 0 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.nd-dotted {
+  border-bottom: 1px dotted #c8c8c8;
+  margin-top: 16px;
+}
+
+.nd-more {
+  margin-top: 8px;
+}
+
+.nd-more-link {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+  .nd-grid {
+    gap: 16px;
+    grid-template-columns: 1fr;
+  }
+  .nd-right-list {
+    grid-template-columns: 1fr;
+  }
+}

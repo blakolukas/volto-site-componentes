@@ -4,6 +4,7 @@ const initialState = {
   data: [],
   loading: false,
   error: null,
+  byKey: {},
 };
 
 export default function ultimas(state = initialState, action = {}) {
@@ -11,21 +12,50 @@ export default function ultimas(state = initialState, action = {}) {
     case `${LIST_ULTIMAS}_PENDING`:
       return {
         ...state,
-        data: [],
-        error: null,
-        loading: true,
+        ...(action.key
+          ? {
+              byKey: {
+                ...state.byKey,
+                [action.key]: { data: [], loading: true, error: null },
+              },
+            }
+          : { data: [], loading: true, error: null }),
       };
     case `${LIST_ULTIMAS}_SUCCESS`:
       return {
         ...state,
-        data: action.result.items,
-        error: null,
+        ...(action.key
+          ? {
+              byKey: {
+                ...state.byKey,
+                [action.key]: {
+                  data: action.result.items,
+                  loading: false,
+                  error: null,
+                },
+              },
+            }
+          : { data: action.result.items, loading: false, error: null }),
       };
     case `${LIST_ULTIMAS}_FAIL`:
       return {
         ...state,
-        data: [],
-        error: action.error.response.error,
+        ...(action.key
+          ? {
+              byKey: {
+                ...state.byKey,
+                [action.key]: {
+                  data: [],
+                  loading: false,
+                  error: action.error.response?.error || action.error,
+                },
+              },
+            }
+          : {
+              data: [],
+              loading: false,
+              error: action.error.response?.error || action.error,
+            }),
       };
     default:
       return state;
