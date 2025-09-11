@@ -6,6 +6,11 @@
   margin: 20px auto;
 }
 
+.custom-content > h5 {
+  min-height: 50px;
+  text-align: start;
+}
+
 .custom-grid-link {
   display: grid;
   width: 100%;

@@ -5,6 +5,8 @@ import ListaTelefones from './components/ListaTelefones/ListaTelefones';
 import Noticias from './components/Blocks/Listing/Noticias/Noticias';
 import GridServicos from './components/Blocks/Listing/GridServicos/GridServicos';
 import GridProg from './components/Blocks/Listing/GridProg/GridProg';
+import BarraEstado from './components/BarraEstado/BarraEstado';
+import BarraAcessibilidade from './components/BarraAcessibilidade/BarraAcessibilidade';
 
 //import schemaEnhancerProg from './components/Blocks/Listing/GridProg/schemaEnhancer';
 //import schemaEnhancerServicos from './components/Blocks/Listing/GridServicos/schemaEnhancer';
@@ -22,6 +24,10 @@ import imageTextoSVG from '@plone/volto/icons/image.svg';
 import MenuLateralBlockEdit from './components/Blocks/MenuLateral/Edit';
 import MenuLateralBlockView from './components/Blocks/MenuLateral/View';
 
+// Noticias com destaque
+import NoticiasComDestaqueEdit from './components/Blocks/NoticiasComDestaque/Edit';
+import NoticiasComDestaqueView from './components/Blocks/NoticiasComDestaque/View';
+import destaqueSVG from '@plone/volto/icons/list-bullet.svg';
 //reducers
 import defaultReducers from '@plone/volto/reducers';
 import locais from './reducers/locais/locais';
@@ -116,6 +122,17 @@ const applyConfig = (config) => {
     sidebarTab: 1,
   };
 
+  // Bloco Notícias com Destaque
+  config.blocks.blocksConfig.noticiasComDestaque = {
+    id: 'noticiasComDestaque',
+    title: 'Notícias com destaque',
+    group: 'procergs',
+    icon: destaqueSVG,
+    edit: NoticiasComDestaqueEdit,
+    view: NoticiasComDestaqueView,
+    sidebarTab: 1,
+  };
+
   /// Grupos de Blocos
   config.blocks.groupBlocksOrder = [
     ...config.blocks.groupBlocksOrder,
@@ -196,3 +213,6 @@ const applyConfig = (config) => {
 };
 
 export default applyConfig;
+
+// Export components for external use
+export { BarraEstado, BarraAcessibilidade };

@@ -14,6 +14,11 @@ export default function applyConfig(config) {
         label: 'Gray',
         icon: () => <Icon name={paintSVG} size="18px" />,
       },
+      {
+        cssClass: 'green',
+        label: 'Green',
+        icon: () => <Icon name={paintSVG} size="18px" />,
+      },
     ],
   };
 
