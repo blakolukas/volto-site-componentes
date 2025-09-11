@@ -92,7 +92,15 @@ const BarraAcessibilidade = ({ svgImage }) => {
     <div className="acessibilidade">
       <div className="acess-container">
         <div className="acess-wrapper">
-          {svgImage && <div className="acess-svg">{svgImage}</div>}
+          {svgImage && (
+            <div className="acess-svg">
+              {typeof svgImage === 'string' ? (
+                <img src={svgImage} alt="Logo" />
+              ) : (
+                svgImage
+              )}
+            </div>
+          )}
           <div className="acess-menus">
             <div className="acess-right">
               <ul className="acess-ul">
@@ -177,7 +185,7 @@ const BarraAcessibilidade = ({ svgImage }) => {
 };
 
 BarraAcessibilidade.propTypes = {
-  svgImage: PropTypes.node,
+  svgImage: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
 };
 
 BarraAcessibilidade.defaultProps = {

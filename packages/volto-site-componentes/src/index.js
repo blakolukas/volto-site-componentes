@@ -1,3 +1,6 @@
+// Public components (explicit imports + named export for better ESLint import/named support)
+import BarraAcessibilidade from './components/BarraAcessibilidade/BarraAcessibilidade';
+import BarraEstado from './components/BarraEstado/BarraEstado';
 import ListaTelefones from './components/ListaTelefones/ListaTelefones';
 import Noticias from './components/Blocks/Listing/Noticias/Noticias';
 import GridServicos from './components/Blocks/Listing/GridServicos/GridServicos';
@@ -40,6 +43,7 @@ import UltimasNoticiasViewDispatcher from './components/Blocks/UltimasNoticias/U
 //gray and small text
 
 import installSlate from './editor';
+export { BarraAcessibilidade, BarraEstado };
 
 const applyConfig = (config) => {
   config = [installSlate].reduce((acc, apply) => apply(acc), config);
